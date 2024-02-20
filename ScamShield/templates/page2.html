@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% block content %}
+<h1 id="p2title">{% block title %}Get Secure Now!{% endblock %}</h1>
+
+<form method="post" action="/">
+  <fieldset>
+    <label>Paste text here:</label>
+    <input type="text" name="textbox" />
+    <input id="submit" type="submit" name="submit" />
+  </fieldset>
+</form>
+
+<form method="post" action="/" name="imagebox">
+  <fieldset>
+    <label>Upload an image here: [png/jpeg]</label>
+    <input type="file" name="imagebox" />
+    <input id="submit" type="submit" name="submit" />
+  </fieldset>
+</form>
+
+{% if spam == true %}
+  <div class="message" id="danger">
+    <p>Oh no! We found some suspicious activity. Please proceed with caution. See our resources page for next steps.</p>
+  </div>
+
+{% elif spam == false %}
+  <div class="message" id="danger">
+    <p>This message seems safe! We did not find any suspicious activity.</p>
+  </div>
+
+{% else %}
+  <div class="message"></div>
+    <p></p>
+  </div>
+{% endif %} {% endblock %}

@@ -1,0 +1,47 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhmtl11/DTD/xhtml11.dtd">
+<!-- XML/XHTML boilerplate code -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+    <title>{% block title %} {% endblock%}</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+  </head>
+
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="{{ url_for('index')}}">Home</a>
+        </li>
+        <li>
+          <a href="{{ url_for('page2')}}">Scan</a>
+        </li>
+        <li>
+          <a href="{{ url_for('page3')}}">Resources</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <body>
+    <!-- most of content follows the body tag -->
+    {%block content%} {% endblock%} {%block more%} {% endblock%}
+
+    <br />
+    <br />
+    <br />
+    <hr style="color: black" />
+    <footer>
+      <a href="#">Contact Us</a>
+      <a href="{{ url_for('page3')}}">Resources</a>
+      <div>
+        Scam Shield Project by Arfaa, Lena, Heba, Anika
+        <br />
+        WinHacks 2024
+      </div>
+    </footer>
+
+    <!-- these must be the last two lines of an HTML document -->
+  </body>
+</html>

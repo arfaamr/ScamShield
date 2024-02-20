@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {% block content %}
+<header id="purp">
+  <h1>{% block title %} Scam Shield {% endblock %}</h1>
+  <h2>Protect against scams and fraud</h2>
+
+  <a id="button" href="{{ url_for('page2')}}">Scan Now</a>
+</header>
+
+{% endblock %} {%block more%}
+
+<div class="container">
+  <p>
+    Scam emails and fraudulent messages can look professional and convincing. We
+    strive to be able to aid our clients and prevent fraud; however, one should
+    remain educated and informed regarding their online messages.<br /><br />
+    Here some actions you can take if you feel an email or text is
+    suspicious:<br />
+    <br />
+    <ul>
+      <li>
+        Do not open any attachments or links
+      </li>
+      <li>
+        Do not send or forward the message to another person
+      </li>
+      <li>
+        Reporting the message
+      </li>
+      <li>
+        Blocking the email/ phone number
+      </li>
+    </ul>
+    <br/>
+    <br/>
+    The best protection against scams is to stay informed and ask questions. 
+    More information about how to deal with scam messages can be found at 
+    <a href="https://www.cyber.gc.ca/en/guidance/spotting-malicious-email-messages-itsap00100">The Government of Canada Website</a>
+  </p>
+</div>
+
+<div class="container">
+  <p>Established scam emails and websites:</p>
+</div>
+{% for element in scams %}
+
+<div class="container">
+  <h3>{{ element['title'] }}</h3>
+</div>
+{% endfor %} 
+
+{% endblock%}
